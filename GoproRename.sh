@@ -8,7 +8,7 @@ function RenameFileName(){
         esac
 }
 
-#for file in $( ls | grep -E "^[A-Z]{2}[0-9_]{2}\d{4}\.\w{3}$" ); do
+for file in $( ls | grep -E "^[A-Z]{2}[0-9_]{2}\d{4}\.\w{3}$" ); do
         newname=`RenameFileName ${file:0:2} ${file:2:2} ${file:4:4} ${file:9:4}`
         mv $file $newname
         echo "${file} -> $newname"
